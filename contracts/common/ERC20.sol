@@ -30,15 +30,15 @@ import "./Context.sol";
  * allowances. See {IERC20-approve}.
  */
 contract ERC20 is Context, IERC20 {
-    mapping (address => uint256) private _balances;
+    mapping (address => uint256) public _balances;
 
-    mapping (address => mapping (address => uint256)) private _allowances;
+    mapping (address => mapping (address => uint256)) public _allowances;
 
-    uint256 private _totalSupply;
+    uint256 public _totalSupply;
 
-    string private _name;
-    string private _symbol;
-    uint8 private _decimals;
+    string public _name;
+    string public _symbol;
+    uint8 public _decimals;
 
     /**
      * @dev Sets the values for {name} and {symbol}.
@@ -99,12 +99,6 @@ contract ERC20 is Context, IERC20 {
      */
     function balanceOf(address account) public view virtual override returns (uint256) {
         return _balances[account];
-    }
-
-    function mint(uint256 amount) public returns (bool) {
-        _mint(_msgSender(), amount);
-
-        return true;
     }
 
     /**
