@@ -1,15 +1,15 @@
 import { HardhatRuntimeEnvironment } from "hardhat/types";
 import { DeployFunction } from "hardhat-deploy/types";
+import { BigNumber } from "@ethersproject/bignumber";
 
 const func: DeployFunction = async (hre: HardhatRuntimeEnvironment) => {
     const { deployments, getNamedAccounts } = hre;
 
     const { deployer } = await getNamedAccounts();
-    const greeting = "Hello, world!";
 
-    await deployments.deploy("Greeter", {
+    await deployments.deploy("ERC20", {
         from: deployer,
-        args: [greeting],
+        args: ["USDC", "USDC", BigNumber.from(6)],
         log: true,
     });
 };

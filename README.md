@@ -1,3 +1,9 @@
+# TestUSDC
+
+An ERC20 token with 6 decimals and a mint function that allows anyone to mint tokens.
+
+Code was copied from https://github.com/OpenZeppelin/openzeppelin-contracts with the changes above.
+
 # Solidity Template
 
 My favourite setup for writing Solidity smart contracts.
